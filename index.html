@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Photography portfolio by [Your Name]" />
+  <meta name="description" content="Photography portfolio by NJS" />
   <title>NJS PHOTOGRAPHY | Photography Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -22,12 +22,12 @@
   <!-- ABOUT SECTION -->
   <section id="about" class="about">
     <div class="container">
-      <img src="images/njs.jpg" alt="Portrait of photographer" class="profile-pic" />
+      <img src="images/njs.jpg" alt="Portrait of photographer" class="profile-pic" loading="lazy" />
       <div class="about-text">
         <h2>About Me</h2>
         <p>
           I’m a passionate photographer specializing in real estate photography.
-          My goal is to capture asethetically pleasing and unique perspectives through the lens.
+          My goal is to capture aesthetically pleasing and unique perspectives through the lens.
         </p>
       </div>
     </div>
@@ -37,19 +37,27 @@
   <section id="gallery" class="gallery">
     <h2>Portfolio</h2>
     <div class="grid">
-      <img src="images/front.jpg" alt="Gallery photo 1" />
-      <img src="images/front2.jpg" alt="Gallery photo 2" />
-      <img src="images/living.jpg" alt="Gallery photo 3" />
-      <img src="images/living2.jpg" alt="Gallery photo 4" />
-      <img src="images/kitchen.jpg" alt="Gallery photo 5" />
-      <img src="images/kitchen2.jpg" alt="Gallery photo 6" />
-      <img src="images/master.jpg" alt="Gallery photo 7" />
-      <img src="images/masterb.jpg" alt="Gallery photo 8" />
-      <img src="images/upstairs.jpg" alt="Gallery photo 9" />
-      <img src="images/bedroom1.jpg" alt="Gallery photo 10" />
-      <img src="images/guest.jpg" alt="Gallery photo 11" />
+      <img src="images/front.jpg" alt="Gallery photo 1" loading="lazy" />
+      <img src="images/front2.jpg" alt="Gallery photo 2" loading="lazy" />
+      <img src="images/living.jpg" alt="Gallery photo 3" loading="lazy" />
+      <img src="images/living2.jpg" alt="Gallery photo 4" loading="lazy" />
+      <img src="images/kitchen.jpg" alt="Gallery photo 5" loading="lazy" />
+      <img src="images/kitchen2.jpg" alt="Gallery photo 6" loading="lazy" />
+      <img src="images/master.jpg" alt="Gallery photo 7" loading="lazy" />
+      <img src="images/masterb.jpg" alt="Gallery photo 8" loading="lazy" />
+      <img src="images/upstairs.jpg" alt="Gallery photo 9" loading="lazy" />
+      <img src="images/bedroom1.jpg" alt="Gallery photo 10" loading="lazy" />
+      <img src="images/guest.jpg" alt="Gallery photo 11" loading="lazy" />
     </div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox">
+    <span class="close">&times;</span>
+    <span class="prev">&#10094;</span>
+    <img src="" alt="Expanded view" />
+    <span class="next">&#10095;</span>
+  </div>
 
   <!-- CONTACT SECTION -->
   <section id="contact" class="contact">
@@ -60,8 +68,56 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 [NJS]. All rights reserved.</p>
+    <p>© 2025 NJS. All rights reserved.</p>
   </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const closeBtn = lightbox.querySelector('.close');
+    const nextBtn = lightbox.querySelector('.next');
+    const prevBtn = lightbox.querySelector('.prev');
+    let currentIndex = 0;
+
+    // Lightbox open
+    galleryImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+        currentIndex = index;
+      });
+
+      // Smooth fade-in once loaded
+      img.addEventListener('load', () => img.classList.add('loaded'));
+    });
+
+    // Close lightbox
+    closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
+
+    // Next/Prev
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex].src;
+    });
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex].src;
+    });
+
+    // Close by clicking outside
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'ArrowRight') nextBtn.click();
+      if (e.key === 'ArrowLeft') prevBtn.click();
+      if (e.key === 'Escape') closeBtn.click();
+    });
+  </script>
 </body>
 </html>
-
