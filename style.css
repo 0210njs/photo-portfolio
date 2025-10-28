@@ -4,6 +4,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: #f5f5f5;
   color: #222;
+  scroll-behavior: smooth;
 }
 
 /* --- HEADER --- */
@@ -55,6 +56,12 @@ nav a:hover {
   border-radius: 50%;
   object-fit: cover;
   margin-right: 2rem;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.about img.profile-pic.loaded {
+  opacity: 1;
 }
 
 .about-text {
@@ -70,6 +77,7 @@ nav a:hover {
 
 .gallery h2 {
   margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 .gallery .grid {
@@ -85,11 +93,61 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.8s ease;
+  opacity: 0;
+}
+
+.gallery img.loaded {
+  opacity: 1;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
+}
+
+/* --- LIGHTBOX --- */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.2);
+  animation: fadeIn 0.4s ease;
+}
+
+.lightbox .close,
+.lightbox .next,
+.lightbox .prev {
+  position: absolute;
+  color: white;
+  font-size: 2.2em;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.lightbox .close { top: 20px; right: 40px; }
+.lightbox .next { right: 40px; top: 50%; transform: translateY(-50%); }
+.lightbox .prev { left: 40px; top: 50%; transform: translateY(-50%); }
+
+.lightbox .close:hover,
+.lightbox .next:hover,
+.lightbox .prev:hover {
+  color: #ffb400;
 }
 
 /* --- CONTACT --- */
@@ -128,3 +186,8 @@ footer {
   }
 }
 
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
