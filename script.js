@@ -69,28 +69,30 @@ window.addEventListener('load', () => {
 });
 
 // --- GALLERY CATEGORY FILTER ---
-const filterButtons = document.querySelectorAll('.filter-btn');
-const allImages = document.querySelectorAll('.gallery img');
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const allImages = document.querySelectorAll('.gallery img');
 
-if (filterButtons.length > 0) {
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const category = button.getAttribute('data-category');
+  if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
 
-      // Remove active class from all buttons
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
 
-      // Filter images by category
-      allImages.forEach(img => {
-        if (category === 'all' || img.dataset.category === category) {
-          img.style.display = 'block';
-          setTimeout(() => img.classList.add('fade-in'), 50);
-        } else {
-          img.classList.remove('fade-in');
-          setTimeout(() => img.style.display = 'none', 200);
-        }
+        // Filter images by category
+        allImages.forEach(img => {
+          if (category === 'all' || img.dataset.category === category) {
+            img.style.display = 'block';
+            setTimeout(() => img.classList.add('fade-in'), 50);
+          } else {
+            img.classList.remove('fade-in');
+            setTimeout(() => (img.style.display = 'none'), 200);
+          }
+        });
       });
     });
-  });
-}
+  }
+});
