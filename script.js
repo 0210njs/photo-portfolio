@@ -81,16 +81,17 @@ if (filterButtons.length > 0) {
       filterButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
 
-      // Filter images by category
+      // Filter images by category (fade, not resize)
       allImages.forEach(img => {
         if (category === 'all' || img.dataset.category === category) {
-          img.style.display = 'block';
-          setTimeout(() => img.classList.add('fade-in'), 50);
+          img.style.opacity = '1';
+          img.style.pointerEvents = 'auto';
         } else {
-          img.classList.remove('fade-in');
-          setTimeout(() => img.style.display = 'none', 200);
+          img.style.opacity = '0';
+          img.style.pointerEvents = 'none';
         }
       });
     });
   });
 }
+
