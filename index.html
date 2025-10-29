@@ -33,25 +33,38 @@
     </div>
   </section>
 
-  <!-- GALLERY SECTION -->
-  <section id="gallery" class="gallery">
-    <h2>Portfolio</h2>
-    <div class="grid">
-      <img src="images/front.jpg" alt="Gallery photo 1" loading="lazy" />
-      <img src="images/front2.jpg" alt="Gallery photo 2" loading="lazy" />
-      <img src="images/living.jpg" alt="Gallery photo 3" loading="lazy" />
-      <img src="images/liv2.jpg" alt="Gallery photo 4" loading="lazy" />
-      <img src="images/living2.jpg" alt="Gallery photo 5" loading="lazy" />
-       <img src="images/kitch2.jpg" alt="Gallery photo 6" loading="lazy" />
-      <img src="images/kitchen.jpg" alt="Gallery photo 7" loading="lazy" />
-      <img src="images/kitchen2.jpg" alt="Gallery photo 8" loading="lazy" />
-      <img src="images/master.jpg" alt="Gallery photo 9" loading="lazy" />
-      <img src="images/masterb.jpg" alt="Gallery photo 10" loading="lazy" />
-      <img src="images/upstairs.jpg" alt="Gallery photo 11" loading="lazy" />
-      <img src="images/bedroom1.jpg" alt="Gallery photo 12" loading="lazy" />
-      <img src="images/guest.jpg" alt="Gallery photo 13" loading="lazy" />
-    </div>
-  </section>
+ <!-- GALLERY SECTION -->
+<section id="gallery" class="gallery">
+  <h2>Portfolio</h2>
+
+  <!-- FILTER BUTTONS -->
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="real-estate">Real Estate</button>
+    <button class="filter-btn" data-category="cars">Cars</button>
+  </div>
+
+  <!-- IMAGE GRID -->
+  <div class="grid">
+    <!-- REAL ESTATE IMAGES -->
+    <img src="images/front.jpg" alt="Gallery photo 1" data-category="real-estate" />
+    <img src="images/front2.jpg" alt="Gallery photo 2" data-category="real-estate" />
+    <img src="images/living.jpg" alt="Gallery photo 3" data-category="real-estate" />
+    <img src="images/living2.jpg" alt="Gallery photo 4" data-category="real-estate" />
+    <img src="images/kitchen.jpg" alt="Gallery photo 5" data-category="real-estate" />
+    <img src="images/kitchen2.jpg" alt="Gallery photo 6" data-category="real-estate" />
+    <img src="images/master.jpg" alt="Gallery photo 7" data-category="real-estate" />
+    <img src="images/masterb.jpg" alt="Gallery photo 8" data-category="real-estate" />
+    <img src="images/upstairs.jpg" alt="Gallery photo 9" data-category="real-estate" />
+    <img src="images/bedroom1.jpg" alt="Gallery photo 10" data-category="real-estate" />
+    <img src="images/guest.jpg" alt="Gallery photo 11" data-category="real-estate" />
+
+    <!-- CARS IMAGES -->
+    <img src="images/honda1.jpg" alt="Car photo 1" data-category="cars" />
+    <img src="images/honda2.jpg" alt="Car photo 2" data-category="cars" />
+  </div>
+</section>
+
 
   <!-- LIGHTBOX -->
   <div class="lightbox">
