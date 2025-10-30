@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Photography portfolio by NJS" />
+  <title>NJS PHOTOGRAPHY | Photography Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body>
   <!-- HEADER -->
   <header>
-    <h1>Your Name</h1>
+    <h1>NJS PHOTOGRAPHY</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
@@ -19,80 +20,71 @@
   </header>
 
   <!-- ABOUT SECTION -->
-  <section class="about" id="about">
+  <section id="about" class="about">
     <div class="container">
-      <img src="images/profile.jpg" alt="Profile picture" class="profile-pic" />
+      <img src="images/njs.jpg" alt="Portrait of photographer" class="profile-pic" loading="lazy" />
       <div class="about-text">
         <h2>About Me</h2>
         <p>
-          Welcome to my portfolio! I’m a creative professional passionate about photography,
-          design, and technology. Scroll down to see my work.
+          I’m a passionate photographer specializing in real estate & car photography.
+          My goal is to capture aesthetically pleasing and unique perspectives through the lens.
         </p>
       </div>
     </div>
   </section>
 
   <!-- GALLERY SECTION -->
-  <section class="gallery" id="gallery">
-    <h2>Gallery</h2>
+  <section id="gallery" class="gallery">
+    <h2>Portfolio</h2>
 
+    <!-- FILTER BUTTONS -->
     <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="nature">Nature</button>
-      <button class="filter-btn" data-filter="city">City</button>
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="real-estate">Real Estate</button>
+      <button class="filter-btn" data-category="cars">Cars</button>
     </div>
 
+    <!-- IMAGE GRID -->
     <div class="grid">
-      <!-- Example Gallery Items -->
-      <div class="gallery-item" data-category="nature">
-        <img 
-          src="images/nature1-large.jpg" 
-          srcset="images/nature1-small.jpg 480w, images/nature1-large.jpg 800w"
-          sizes="(max-width: 700px) 90vw, 300px"
-          alt="Nature photo"
-          loading="lazy"
-        >
-      </div>
-      <div class="gallery-item" data-category="city">
-        <img 
-          src="images/city1-large.jpg" 
-          srcset="images/city1-small.jpg 480w, images/city1-large.jpg 800w"
-          sizes="(max-width: 700px) 90vw, 300px"
-          alt="City photo"
-          loading="lazy"
-        >
-      </div>
-      <div class="gallery-item" data-category="nature">
-        <img 
-          src="images/nature2-large.jpg" 
-          srcset="images/nature2-small.jpg 480w, images/nature2-large.jpg 800w"
-          sizes="(max-width: 700px) 90vw, 300px"
-          alt="Nature photo 2"
-          loading="lazy"
-        >
-      </div>
+      <!-- REAL ESTATE IMAGES -->
+      <div class="gallery-item"><img src="images/front.jpg" alt="Gallery photo 1" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/front2.jpg" alt="Gallery photo 2" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/living.jpg" alt="Gallery photo 3" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/liv2.jpg" alt="Gallery photo 4" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/kitch2.jpg" alt="Gallery photo 5" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/up2.jpg" alt="Gallery photo 6" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/living2.jpg" alt="Gallery photo 7" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/kitchen2.jpg" alt="Gallery photo 8" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/master.jpg" alt="Gallery photo 9" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/masterb.jpg" alt="Gallery photo 10" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/upstairs.jpg" alt="Gallery photo 11" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/bath.jpg" alt="Gallery photo 12" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/bedroom1.jpg" alt="Gallery photo 13" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/guest.jpg" alt="Gallery photo 14" data-category="real-estate" /></div>
+      <div class="gallery-item"><img src="images/guest2.jpg" alt="Gallery photo 15" data-category="real-estate" /></div>
+
+      <!-- CARS IMAGES -->
+      <div class="gallery-item"><img src="images/honda1.jpg" alt="Car photo 1" data-category="cars" /></div>
+      <div class="gallery-item"><img src="images/honda2.jpg" alt="Car photo 2" data-category="cars" /></div>
     </div>
   </section>
 
-  <!-- LIGHTBOX (Optional) -->
-  <div class="lightbox" id="lightbox">
+  <!-- LIGHTBOX -->
+  <div class="lightbox">
     <span class="close">&times;</span>
-    <img src="" alt="Enlarged photo">
     <span class="prev">&#10094;</span>
+    <img src="" alt="Expanded view" />
     <span class="next">&#10095;</span>
   </div>
 
   <!-- CONTACT SECTION -->
-  <section class="contact" id="contact">
+  <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Let’s connect! You can reach me via <a href="mailto:you@example.com">email</a>.</p>
+    <p>Email: <a href="mailto:0210njs@gmail.com">0210njs@gmail.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/photography.housing" target="_blank">@photography.housing</a></p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Your Name. All rights reserved.</p>
+    <p>© 2025 NJS. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
