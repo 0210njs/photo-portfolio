@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Photography portfolio by NJS" />
-  <title>NJS PHOTOGRAPHY | Photography Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+
   <!-- HEADER -->
   <header>
-    <h1>NJS PHOTOGRAPHY</h1>
+    <h1>Your Name</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
@@ -20,139 +19,80 @@
   </header>
 
   <!-- ABOUT SECTION -->
-  <section id="about" class="about">
+  <section class="about" id="about">
     <div class="container">
-      <img src="images/njs.jpg" alt="Portrait of photographer" class="profile-pic" loading="lazy" />
+      <img src="images/profile.jpg" alt="Profile picture" class="profile-pic" />
       <div class="about-text">
         <h2>About Me</h2>
         <p>
-          I’m a passionate photographer specializing in real estate & car photography.
-          My goal is to capture aesthetically pleasing and unique perspectives through the lens.
+          Welcome to my portfolio! I’m a creative professional passionate about photography,
+          design, and technology. Scroll down to see my work.
         </p>
       </div>
     </div>
   </section>
 
   <!-- GALLERY SECTION -->
-  <section id="gallery" class="gallery">
-    <h2>Portfolio</h2>
+  <section class="gallery" id="gallery">
+    <h2>Gallery</h2>
 
-    <!-- FILTER BUTTONS -->
     <div class="filter-buttons">
-      <button class="filter-btn active" data-category="all">All</button>
-      <button class="filter-btn" data-category="real-estate">Real Estate</button>
-      <button class="filter-btn" data-category="cars">Cars</button>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="city">City</button>
     </div>
 
-    <!-- IMAGE GRID -->
     <div class="grid">
-      <!-- Example: replace each image below with your real ones -->
-      <div class="gallery-item"><img src="images/front.jpg" alt="Gallery photo 1" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/front2.jpg" alt="Gallery photo 2" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/living.jpg" alt="Gallery photo 3" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/liv2.jpg" alt="Gallery photo 4" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/kitch2.jpg" alt="Gallery photo 5" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/up2.jpg" alt="Gallery photo 6" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/living2.jpg" alt="Gallery photo 7" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/kitchen2.jpg" alt="Gallery photo 8" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/master.jpg" alt="Gallery photo 9" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/masterb.jpg" alt="Gallery photo 10" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/upstairs.jpg" alt="Gallery photo 11" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/bath.jpg" alt="Gallery photo 12" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/bedroom1.jpg" alt="Gallery photo 13" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/guest.jpg" alt="Gallery photo 14" data-category="real-estate" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/guest2.jpg" alt="Gallery photo 15" data-category="real-estate" loading="lazy" /></div>
-
-      <!-- Cars -->
-      <div class="gallery-item"><img src="images/honda1.jpg" alt="Car photo 1" data-category="cars" loading="lazy" /></div>
-      <div class="gallery-item"><img src="images/honda2.jpg" alt="Car photo 2" data-category="cars" loading="lazy" /></div>
+      <!-- Example Gallery Items -->
+      <div class="gallery-item" data-category="nature">
+        <img 
+          src="images/nature1-large.jpg" 
+          srcset="images/nature1-small.jpg 480w, images/nature1-large.jpg 800w"
+          sizes="(max-width: 700px) 90vw, 300px"
+          alt="Nature photo"
+          loading="lazy"
+        >
+      </div>
+      <div class="gallery-item" data-category="city">
+        <img 
+          src="images/city1-large.jpg" 
+          srcset="images/city1-small.jpg 480w, images/city1-large.jpg 800w"
+          sizes="(max-width: 700px) 90vw, 300px"
+          alt="City photo"
+          loading="lazy"
+        >
+      </div>
+      <div class="gallery-item" data-category="nature">
+        <img 
+          src="images/nature2-large.jpg" 
+          srcset="images/nature2-small.jpg 480w, images/nature2-large.jpg 800w"
+          sizes="(max-width: 700px) 90vw, 300px"
+          alt="Nature photo 2"
+          loading="lazy"
+        >
+      </div>
     </div>
   </section>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox">
+  <!-- LIGHTBOX (Optional) -->
+  <div class="lightbox" id="lightbox">
     <span class="close">&times;</span>
+    <img src="" alt="Enlarged photo">
     <span class="prev">&#10094;</span>
-    <img src="" alt="Expanded view" />
     <span class="next">&#10095;</span>
   </div>
 
   <!-- CONTACT SECTION -->
-  <section id="contact" class="contact">
+  <section class="contact" id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:0210njs@gmail.com">0210njs@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/photography.housing" target="_blank">@photography.housing</a></p>
+    <p>Let’s connect! You can reach me via <a href="mailto:you@example.com">email</a>.</p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 NJS. All rights reserved.</p>
+    <p>© 2025 Your Name. All rights reserved.</p>
   </footer>
 
-  <!-- JAVASCRIPT -->
-  <script>
-    // --- SMOOTH SCROLL ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    // --- LIGHTBOX GALLERY ---
-    const galleryImages = document.querySelectorAll('.gallery-item img');
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    const closeBtn = lightbox.querySelector('.close');
-    const nextBtn = lightbox.querySelector('.next');
-    const prevBtn = lightbox.querySelector('.prev');
-    let currentIndex = 0;
-
-    galleryImages.forEach((img, index) => {
-      img.addEventListener('click', () => {
-        lightbox.classList.add('active');
-        lightboxImg.src = img.src;
-        currentIndex = index;
-      });
-    });
-
-    closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % galleryImages.length;
-      lightboxImg.src = galleryImages[currentIndex].src;
-    });
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-      lightboxImg.src = galleryImages[currentIndex].src;
-    });
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('active'); });
-    document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'ArrowRight') nextBtn.click();
-      if (e.key === 'ArrowLeft') prevBtn.click();
-      if (e.key === 'Escape') closeBtn.click();
-    });
-
-    // --- GALLERY FILTER ---
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const allItems = document.querySelectorAll('.gallery-item');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        allItems.forEach(item => {
-          const img = item.querySelector('img');
-          if (category === 'all' || img.dataset.category === category)
-            item.classList.remove('hidden');
-          else
-            item.classList.add('hidden');
-        });
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
