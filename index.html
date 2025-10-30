@@ -6,6 +6,9 @@
   <meta name="description" content="Photography portfolio by NJS" />
   <title>NJS PHOTOGRAPHY | Photography Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Preload key images for faster first load -->
+  <link rel="preload" as="image" href="images/front.webp" type="image/webp" />
 </head>
 <body>
   <!-- HEADER -->
@@ -21,7 +24,10 @@
   <!-- ABOUT SECTION -->
   <section id="about" class="about">
     <div class="container">
-      <img src="images/njs.jpg" alt="Portrait of photographer" class="profile-pic" loading="lazy" />
+      <picture>
+        <source srcset="images/njs.webp" type="image/webp" />
+        <img src="images/njs.jpg" alt="Portrait of photographer" class="profile-pic" loading="lazy" />
+      </picture>
       <div class="about-text">
         <h2>About Me</h2>
         <p>
@@ -45,26 +51,24 @@
 
     <!-- IMAGE GRID -->
     <div class="grid">
-      <!-- REAL ESTATE IMAGES -->
-      <div class="gallery-item"><img src="images/front.jpg" alt="Gallery photo 1" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/front2.jpg" alt="Gallery photo 2" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/living.jpg" alt="Gallery photo 3" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/liv2.jpg" alt="Gallery photo 4" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/kitch2.jpg" alt="Gallery photo 5" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/up2.jpg" alt="Gallery photo 6" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/living2.jpg" alt="Gallery photo 7" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/kitchen2.jpg" alt="Gallery photo 8" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/master.jpg" alt="Gallery photo 9" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/masterb.jpg" alt="Gallery photo 10" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/upstairs.jpg" alt="Gallery photo 11" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/bath.jpg" alt="Gallery photo 12" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/bedroom1.jpg" alt="Gallery photo 13" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/guest.jpg" alt="Gallery photo 14" data-category="real-estate" /></div>
-      <div class="gallery-item"><img src="images/guest2.jpg" alt="Gallery photo 15" data-category="real-estate" /></div>
-
-      <!-- CARS IMAGES -->
-      <div class="gallery-item"><img src="images/honda1.jpg" alt="Car photo 1" data-category="cars" /></div>
-      <div class="gallery-item"><img src="images/honda2.jpg" alt="Car photo 2" data-category="cars" /></div>
+      <!-- Example: WebP first, JPEG fallback -->
+      <div class="gallery-item"><picture><source srcset="images/front.webp" type="image/webp"><img src="images/front.jpg" alt="Gallery photo 1" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/front2.webp" type="image/webp"><img src="images/front2.jpg" alt="Gallery photo 2" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/living.webp" type="image/webp"><img src="images/living.jpg" alt="Gallery photo 3" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/liv2.webp" type="image/webp"><img src="images/liv2.jpg" alt="Gallery photo 4" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/kitch2.webp" type="image/webp"><img src="images/kitch2.jpg" alt="Gallery photo 5" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/up2.webp" type="image/webp"><img src="images/up2.jpg" alt="Gallery photo 6" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/living2.webp" type="image/webp"><img src="images/living2.jpg" alt="Gallery photo 7" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/kitchen2.webp" type="image/webp"><img src="images/kitchen2.jpg" alt="Gallery photo 8" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/master.webp" type="image/webp"><img src="images/master.jpg" alt="Gallery photo 9" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/masterb.webp" type="image/webp"><img src="images/masterb.jpg" alt="Gallery photo 10" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/upstairs.webp" type="image/webp"><img src="images/upstairs.jpg" alt="Gallery photo 11" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/bath.webp" type="image/webp"><img src="images/bath.jpg" alt="Gallery photo 12" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/bedroom1.webp" type="image/webp"><img src="images/bedroom1.jpg" alt="Gallery photo 13" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/guest.webp" type="image/webp"><img src="images/guest.jpg" alt="Gallery photo 14" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/guest2.webp" type="image/webp"><img src="images/guest2.jpg" alt="Gallery photo 15" data-category="real-estate" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/honda1.webp" type="image/webp"><img src="images/honda1.jpg" alt="Car photo 1" data-category="cars" loading="lazy" /></picture></div>
+      <div class="gallery-item"><picture><source srcset="images/honda2.webp" type="image/webp"><img src="images/honda2.jpg" alt="Car photo 2" data-category="cars" loading="lazy" /></picture></div>
     </div>
   </section>
 
@@ -90,16 +94,16 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    // --- SMOOTH SCROLL FOR INTERNAL LINKS ---
+    // SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(anchor.getAttribute('href'));
         if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     });
 
-    // --- LIGHTBOX GALLERY ---
+    // LIGHTBOX
     const galleryImages = document.querySelectorAll('.gallery-item img');
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = lightbox.querySelector('img');
@@ -108,14 +112,12 @@
     const prevBtn = lightbox.querySelector('.prev');
     let currentIndex = 0;
 
-    galleryImages.forEach((img, index) => {
+    galleryImages.forEach((img, i) => {
       img.addEventListener('click', () => {
         lightbox.classList.add('active');
         lightboxImg.src = img.src;
-        currentIndex = index;
+        currentIndex = i;
       });
-      if (img.complete) img.classList.add('loaded');
-      else img.addEventListener('load', () => img.classList.add('loaded'));
     });
 
     closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
@@ -127,9 +129,6 @@
       currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
       lightboxImg.src = galleryImages[currentIndex].src;
     });
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) lightbox.classList.remove('active');
-    });
     document.addEventListener('keydown', e => {
       if (!lightbox.classList.contains('active')) return;
       if (e.key === 'ArrowRight') nextBtn.click();
@@ -137,26 +136,20 @@
       if (e.key === 'Escape') closeBtn.click();
     });
 
-    // --- PROFILE PIC FADE-IN ---
-    window.addEventListener('load', () => {
-      const profilePic = document.querySelector('.profile-pic');
-      if (profilePic) profilePic.classList.add('loaded');
-    });
-
-    // --- GALLERY FILTER ---
+    // FILTER BUTTONS
     const filterButtons = document.querySelectorAll('.filter-btn');
     const allItems = document.querySelectorAll('.gallery-item');
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
-        filterButtons.forEach(btn => btn.classList.remove('active'));
+        const category = button.dataset.category;
+        filterButtons.forEach(b => b.classList.remove('active'));
         button.classList.add('active');
         allItems.forEach(item => {
           const img = item.querySelector('img');
-          if (category === 'all' || img.dataset.category === category)
-            item.classList.remove('hidden');
-          else
-            item.classList.add('hidden');
+          item.style.display =
+            category === 'all' || img.dataset.category === category
+              ? 'block'
+              : 'none';
         });
       });
     });
