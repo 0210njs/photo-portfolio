@@ -1,10 +1,12 @@
-/* --- GENERAL STYLES --- */
+/* --- GENERAL --- */
 body {
   margin: 0;
   font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: #f5f5f5;
   color: #222;
   scroll-behavior: smooth;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* --- HEADER --- */
@@ -36,7 +38,7 @@ nav a:hover {
   color: #ffb400;
 }
 
-/* --- ABOUT SECTION --- */
+/* --- ABOUT --- */
 .about {
   background: white;
   padding: 3rem 2rem 2rem;
@@ -57,13 +59,6 @@ nav a:hover {
   object-fit: cover;
   margin-right: 2rem;
   display: block;
-  opacity: 1 !important;
-  position: relative;
-  z-index: 5;
-}
-
-.about-text {
-  flex: 1;
 }
 
 /* --- GALLERY --- */
@@ -71,7 +66,6 @@ nav a:hover {
   background: #f5f5f5;
   text-align: center;
   padding: 2rem 2rem 3rem;
-  margin-top: -1rem; /* reduce white gap between about & gallery */
 }
 
 .gallery h2 {
@@ -88,36 +82,23 @@ nav a:hover {
 }
 
 .gallery-item {
-  position: relative;
   overflow: hidden;
   border-radius: 8px;
 }
 
 .gallery-item img {
-  width: 100%;        /* keep full width of grid cell */
-  height: auto;       /* preserve natural aspect ratio */
-  object-fit: cover;  /* crop nicely if needed */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   border-radius: 8px;
-  transition: transform 0.3s ease, opacity 0.8s ease;
-  opacity: 1;
+  transition: transform 0.3s ease;
+  backface-visibility: hidden;
+  image-rendering: auto;
+  -webkit-user-drag: none;
 }
 
 .gallery-item img:hover {
   transform: scale(1.05);
-}
-
-/* Hides filtered items without breaking grid layout */
-.gallery-item.hidden {
-  display: none;
-}
-
-
-.gallery-item img:hover {
-  transform: scale(1.05);
-}
-
-.gallery-item.hidden {
-  display: none;
 }
 
 /* --- FILTER BUTTONS --- */
@@ -152,7 +133,6 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   z-index: 999;
-  transition: opacity 0.3s ease;
 }
 
 .lightbox.active {
@@ -164,44 +144,9 @@ nav a:hover {
   max-height: 80%;
   border-radius: 10px;
   box-shadow: 0 0 25px rgba(255,255,255,0.2);
-  animation: fadeIn 0.4s ease;
 }
 
-.lightbox .close,
-.lightbox .next,
-.lightbox .prev {
-  position: absolute;
-  color: white;
-  font-size: 2.2em;
-  cursor: pointer;
-  user-select: none;
-  transition: color 0.3s;
-}
-
-.lightbox .close {
-  top: 20px;
-  right: 40px;
-}
-
-.lightbox .next {
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.lightbox .prev {
-  left: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.lightbox .close:hover,
-.lightbox .next:hover,
-.lightbox .prev:hover {
-  color: #ffb400;
-}
-
-/* --- CONTACT --- */
+/* --- CONTACT & FOOTER --- */
 .contact {
   background: white;
   text-align: center;
@@ -217,7 +162,6 @@ nav a:hover {
   color: #ffb400;
 }
 
-/* --- FOOTER --- */
 footer {
   background: #111;
   color: #aaa;
@@ -234,22 +178,10 @@ footer {
   }
 
   .about img {
-    margin: 0 0 1.5rem 0;
+    margin-bottom: 1.5rem;
   }
 
   .gallery-item img {
     height: 180px;
-  }
-}
-
-/* --- ANIMATIONS --- */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
